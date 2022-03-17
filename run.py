@@ -2,6 +2,8 @@ from random import randint
 
 # Legend
 # k for placing ship and hit battleship
+# '' for available space
+# x for missing turns
 
 matrixSize = int(input('Please enter matrix size (between 3 and 9): '))
 hidden_board = [['']*matrixSize for x in range(matrixSize)]
@@ -76,3 +78,27 @@ def count_hit_ship(board):
             if column == 'k':
                 count += 1
     return count
+
+
+create_ship(hidden_board)
+print(hidden_board)
+turns = 5
+while turns > 0:
+    print_board(guess_board)
+    row, column = get_ship_location()
+    if guess_board[row][column] == 'x':
+        print('You already guessed that')
+    elif hidden_board[row][column] == 'k':
+        print('Congratulations, You have hit the target.\n ---You Won---')
+        print('Play again :)')
+        guess_board[row][column] = 'k'
+        print_board(guess_board)
+        break   
+    else:
+        print('Sorry, You missed the target')
+        guess_board[row][column] = 'x'
+        turns -= 1
+        print('You have ' + str(turns) + ' turns remaining')
+    if turns == 0:
+        print('Sorry, your turns are finished,\n ---The game over---')
+        break
