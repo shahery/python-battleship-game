@@ -80,25 +80,60 @@ def count_hit_ship(board):
     return count
 
 
-create_ship(hidden_board)
-print(hidden_board)
-turns = 5
-while turns > 0:
-    print_board(guess_board)
-    row, column = get_ship_location()
-    if guess_board[row][column] == 'x':
-        print('You already guessed that')
-    elif hidden_board[row][column] == 'k':
-        print('Congratulations, You have hit the target.\n ---You Won---')
-        print('Play again :)')
-        guess_board[row][column] = 'k'
+def validate_name(name):
+    """
+    Return the validate user name.
+    """
+    return name.isalpha()
+
+
+def main():
+    """
+    Return the check for username, matrixSize
+    and holding the control of all functions 
+    with different messages and alert.
+    """
+    while True:
+        name = (input('Please enter your name: '))
+        if validate_name(name):
+            break
+        else:
+            print('Name should only contain string characters')
+    print(f'Hello {name} welcome to battleship')
+    while True:
+        try:
+            matrixSize = int(input
+                             ('Please enter matrix size (between 3 and 9): '))
+        except ValueError:
+            print('Please enter a valid integer')
+            continue
+        if(matrixSize > 2 and matrixSize < 10):
+            break
+
+    create_ship(hidden_board)
+    print(hidden_board)
+    turns = 5
+    while turns > 0:
         print_board(guess_board)
-        break   
-    else:
-        print('Sorry, You missed the target')
-        guess_board[row][column] = 'x'
-        turns -= 1
-        print('You have ' + str(turns) + ' turns remaining')
-    if turns == 0:
-        print('Sorry, your turns are finished,\n ---The game over---')
-        break
+        row, column = get_ship_location()
+        if guess_board[row][column] == 'x':
+            print('You already guessed that')
+        elif hidden_board[row][column] == 'k':
+            print('Congratulations, You have hit the target.\n ---You Won---')
+            print('Play again :)')
+
+            guess_board[row][column] = 'k'
+            print_board(guess_board)
+
+            break
+        else:
+            print('Sorry, You missed the target')
+            guess_board[row][column] = 'x'
+            turns -= 1
+            print('You have ' + str(turns) + ' turns remaining')
+        if turns == 0:
+            print('Sorry, your turns are finished,\n ---The game over---')
+            break
+
+
+main()
