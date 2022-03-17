@@ -8,8 +8,8 @@ from random import randint
 
 def print_board(board):
     """
-    Return the board for the game
-    using the MATRIX_SIZE.
+    Print the board for the game
+    based on the MATRIX_SIZE.
     """
     i = 2
     print(' -----------')
@@ -26,7 +26,7 @@ def print_board(board):
 
 def create_ship(board):
     """
-    Return the ship for the board
+    Print the ship for the board
     using the random integer
     """
     for ship in range(MATRIX_SIZE):
@@ -85,7 +85,7 @@ def validate_name(name):
 
 def main():
     """
-    Return the check for username, MATRIX_SIZE
+    Add the check for username, MATRIX_SIZE
     and holding the control of all functions
     with different messages and alert.
     """
@@ -134,6 +134,7 @@ def main():
             print('You have ' + str(turns) + ' turns remaining')
         if turns == 0:
             print('Sorry, your turns are finished,\n ---The game over---')
+            print('Play again :)')
 
             GUESS_BOARD[row][column] = 'x'
             print_board(GUESS_BOARD)
