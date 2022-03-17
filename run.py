@@ -63,3 +63,16 @@ def get_ship_location():
         if(column > 0 and column <= matrixSize):
             break
     return(int(row)-1, int(column)-1)
+
+
+def count_hit_ship(board):
+    """
+    Return the count for hitting ship
+    in the board and indicate with k.
+    """
+    count = 0
+    for row in board:
+        for column in row:
+            if column == 'k':
+                count += 1
+    return count
