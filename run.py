@@ -134,6 +134,10 @@ def main():
             print('You have ' + str(turns) + ' turns remaining')
         if turns == 0:
             print('Sorry, your turns are finished,\n ---The game over---')
+
+            guess_board[row][column] = 'x'
+            print_board(guess_board)
+
             break
 
 
