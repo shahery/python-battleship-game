@@ -10,7 +10,7 @@ guess_board = [['']*matrixSize for x in range(matrixSize)]
 
 def print_board(board):
     """
-    Create the function to print the board
+    Return the board for the game
     using the matrixSize.
     """
     i = 2
@@ -28,9 +28,38 @@ def print_board(board):
 
 def create_ship(board):
     """
-    Create the ship for the board
+    Return the ship for the board
     using the random integer
     """
     for ship in range(matrixSize):
         ship_row, ship_column = randint(0, matrixSize-1), randint(0, matrixSize-1)
     board[ship_row][ship_column] = 'k'
+
+
+def get_ship_location():
+    """
+    Return the ship location in the board,
+    Raise the value error for ship row and
+    ship column with message.
+    """
+    print(' -----------')
+    while True:
+        try:
+            row = int(input(('Please enter a ship row 1 - %d : ' 
+                             % matrixSize)))
+        except ValueError:
+            print('Please enter a valid integer')
+            continue
+        if(row > 0 and row <= matrixSize):
+            break
+
+    while True:
+        try:
+            column = int(input('Please enter a ship column 1 - %d : '
+                               % matrixSize))
+        except ValueError:
+            print('Please enter a valid integer')
+            continue
+        if(column > 0 and column <= matrixSize):
+            break
+    return(int(row)-1, int(column)-1)
