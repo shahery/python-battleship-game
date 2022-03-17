@@ -5,10 +5,6 @@ from random import randint
 # '' for available space
 # x for missing turns
 
-matrixSize = int(input('Please enter matrix size (between 3 and 9): '))
-hidden_board = [['']*matrixSize for x in range(matrixSize)]
-guess_board = [['']*matrixSize for x in range(matrixSize)]
-
 
 def print_board(board):
     """
@@ -100,6 +96,7 @@ def main():
         else:
             print('Name should only contain string characters')
     print(f'Hello {name} welcome to battleship')
+    global matrixSize
     while True:
         try:
             matrixSize = int(input
@@ -110,6 +107,10 @@ def main():
         if(matrixSize > 2 and matrixSize < 10):
             break
 
+    global hidden_board
+    global guess_board
+    hidden_board = [['']*matrixSize for x in range(matrixSize)]
+    guess_board = [['']*matrixSize for x in range(matrixSize)]
     create_ship(hidden_board)
     print(hidden_board)
     turns = 5
