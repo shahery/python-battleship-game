@@ -9,7 +9,8 @@ from random import randint
 def print_board(board):
     """
     Print the board for the game
-    based on the MATRIX_SIZE.
+    based on the MATRIX_SIZE,
+    board: the board to play.
     """
     i = 2
     print(' -----------')
@@ -27,7 +28,8 @@ def print_board(board):
 def create_ship(board):
     """
     Print the ship for the board
-    using the random integer
+    using the random integer,
+    board: the board to play.
     """
     for ship in range(MATRIX_SIZE):
         ship_row, ship_column = randint(0, MATRIX_SIZE-1), randint(0, MATRIX_SIZE-1)
@@ -36,9 +38,10 @@ def create_ship(board):
 
 def get_ship_location():
     """
-    Return the ship location in the board,
+    Returns the ship location in the board,
     Raise the value error for ship row and
-    ship column with message.
+    ship column with message,
+    Returns: the location of the ship as a tuple.
     """
     print(' -----------')
     while True:
@@ -65,8 +68,9 @@ def get_ship_location():
 
 def count_hit_ship(board):
     """
-    Return the count for hitting ship
-    in the board and indicate with k.
+    Returns the count for hitting ship
+    in the board and indicate with k,
+    board: the board to play.
     """
     count = 0
     for row in board:
@@ -78,7 +82,8 @@ def count_hit_ship(board):
 
 def validate_name(name):
     """
-    Return the validate user name.
+    Returns the validate user name,
+    name: the username.
     """
     return name.isalpha()
 
@@ -87,7 +92,7 @@ def main():
     """
     Add the check for username, MATRIX_SIZE
     and holding the control of all functions
-    with different messages and alert.
+    with different messages and alerts.
     """
     while True:
         name = (input('Please enter your name: '))
