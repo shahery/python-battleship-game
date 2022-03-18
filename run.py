@@ -46,20 +46,20 @@ def get_ship_location():
     print(' -----------')
     while True:
         try:
-            row = int(input(('Please enter a ship row 1 - %d : '
+            row = int(input(('Please enter a ship row 1 - %d : \n'
                              % MATRIX_SIZE)))
         except ValueError:
-            print('Please enter a valid integer')
+            print('Please enter a valid integer\n')
             continue
         if(row > 0 and row <= MATRIX_SIZE):
             break
 
     while True:
         try:
-            column = int(input('Please enter a ship column 1 - %d : '
+            column = int(input('Please enter a ship column 1 - %d : \n'
                                % MATRIX_SIZE))
         except ValueError:
-            print('Please enter a valid integer')
+            print('Please enter a valid integer\n')
             continue
         if(column > 0 and column <= MATRIX_SIZE):
             break
@@ -95,19 +95,19 @@ def main():
     with different messages and alerts.
     """
     while True:
-        name = (input('Please enter your name: '))
+        name = (input('Please enter your name: \n'))
         if validate_name(name):
             break
         else:
-            print('Name should only contain string characters')
-    print(f'Hello {name} welcome to battleship')
+            print('Name should only contain string characters\n')
+    print(f'Hello {name} welcome to battleship\n')
     global MATRIX_SIZE
     while True:
         try:
             MATRIX_SIZE = int(input
-                              ('Please enter matrix size (between 3 and 9): '))
+                              ('Please enter matrix size (between 3 and 9): \n'))
         except ValueError:
-            print('Please enter a valid integer')
+            print('Please enter a valid integer\n')
             continue
         if(MATRIX_SIZE > 2 and MATRIX_SIZE < 10):
             break
@@ -123,23 +123,23 @@ def main():
         print_board(GUESS_BOARD)
         row, column = get_ship_location()
         if GUESS_BOARD[row][column] == 'x':
-            print('You already guessed that')
+            print('You already guessed that\n')
         elif HIDDEN_BOARD[row][column] == 'k':
-            print('Congratulations, You have hit the target.\n ---You Won---')
-            print('Play again :)')
+            print('Congratulations, You have hit the target.\n ---You Won---\n')
+            print('Play again :)\n')
 
             GUESS_BOARD[row][column] = 'k'
             print_board(GUESS_BOARD)
 
             break
         else:
-            print('Sorry, You missed the target')
+            print('Sorry, You missed the target\n')
             GUESS_BOARD[row][column] = 'x'
             turns -= 1
-            print('You have ' + str(turns) + ' turns remaining')
+            print('You have ' + str(turns) + ' turns remaining\n')
         if turns == 0:
-            print('Sorry, your turns are finished,\n ---The game over---')
-            print('Play again :)')
+            print('Sorry, your turns are finished,\n ---The game over---\n')
+            print('Play again :)\n')
 
             GUESS_BOARD[row][column] = 'x'
             print_board(GUESS_BOARD)
