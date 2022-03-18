@@ -1,9 +1,12 @@
 from random import randint
+import os
 
 # Legend
 # k for placing ship and hit battleship
 # '' for available space
 # x for missing turns
+
+os.system('clear')
 
 
 def print_board(board):
