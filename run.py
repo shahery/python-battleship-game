@@ -9,16 +9,18 @@ import os
 os.system('clear')
 
 
-def print_board(board):
+def print_board(board, matrix_size):
     """
     Print the board for the game
-    based on the MATRIX_SIZE,
-    board: the board to play.
+    based on the matrix_size,
+    board: the board to play,
+    matrix_size: selection of board
+    size for the user.
     """
     i = 2
     print(' -----------')
     print("   1", end="")
-    while i <= MATRIX_SIZE:
+    while i <= matrix_size:
         print(" ", i, end="")
         i += 1
     row_number = 1
@@ -28,44 +30,52 @@ def print_board(board):
         row_number += 1
 
 
-def create_ship(board):
+def create_ship(board, matrix_size):
     """
     Print the ship for the board
     using the random integer,
-    board: the board to play.
+    board: the board to play,
+    matrix_size: selection of board
+    size for the user.
     """
-    for ship in range(MATRIX_SIZE):
-        ship_row, ship_column = randint(0, MATRIX_SIZE-1), randint(0, MATRIX_SIZE-1)
+    for ship in range(matrix_size):
+        ship_row, ship_column = randint(0, matrix_size-1), randint(0, matrix_size - 1)
     board[ship_row][ship_column] = 'k'
 
 
-def get_ship_location():
+def get_ship_location(matrix_size):
     """
     Returns the ship location in the board,
     Raise the value error for ship row and
     ship column with message,
-    Returns: the location of the ship as a tuple.
+    Returns: the location of the ship as a tuple,
+    matrix_size: selection of board
+    size for the user.
     """
     print(' -----------')
     while True:
         try:
-            row = int(input(('Please enter a ship row 1 - %d : \n'
-                             % MATRIX_SIZE)))
+            row = int(input(f'Please enter a ship row 1 - {matrix_size} : \n'))
         except ValueError:
             print('Please enter a valid integer\n')
             continue
-        if(row > 0 and row <= MATRIX_SIZE):
-            break
+        else:
+            if not validate_input(matrix_size, row):
+                print(f'You entered {row} but your input is not between {1} and {matrix_size}\n')
+            else:
+                break
 
     while True:
         try:
-            column = int(input('Please enter a ship column 1 - %d : \n'
-                               % MATRIX_SIZE))
+            column = int(input(f'Please enter a ship column 1 - {matrix_size} : \n'))
         except ValueError:
             print('Please enter a valid integer\n')
             continue
-        if(column > 0 and column <= MATRIX_SIZE):
-            break
+        else:
+            if not validate_input(matrix_size, column):
+                print(f'You entered {column} but your input is not between {1} and {matrix_size}\n')
+            else:
+                break
     return(int(row)-1, int(column)-1)
 
 
@@ -91,9 +101,26 @@ def validate_name(name):
     return name.isalpha()
 
 
+def validate_matrix_size(matrix_size):
+    """
+    matrix_size: selection of board
+    size for the user.
+    """
+    return matrix_size > 2 and matrix_size < 10
+
+
+def validate_input(matrix_size, coordinates):
+    """
+    matrix_size: selection of board
+    size for the user,
+    coordinates: for rows and columns of board.
+    """
+    return coordinates > 0 and coordinates <= matrix_size
+
+
 def main():
     """
-    Add the check for username, MATRIX_SIZE
+    Add the check for username, matrix_size
     and holding the control of all functions
     with different messages and alerts.
     """
@@ -104,48 +131,47 @@ def main():
         else:
             print('Name should only contain string characters\n')
     print(f'Hello {name} welcome to battleship\n')
-    global MATRIX_SIZE
     while True:
         try:
-            MATRIX_SIZE = int(input
+            matrix_size = int(input
                               ('Please enter matrix size (between 3 and 9): \n'))
         except ValueError:
             print('Please enter a valid integer\n')
             continue
-        if(MATRIX_SIZE > 2 and MATRIX_SIZE < 10):
-            break
-
-    global HIDDEN_BOARD
-    global GUESS_BOARD
-    HIDDEN_BOARD = [['']*MATRIX_SIZE for x in range(MATRIX_SIZE)]
-    GUESS_BOARD = [['']*MATRIX_SIZE for x in range(MATRIX_SIZE)]
-    create_ship(HIDDEN_BOARD)
-    print(HIDDEN_BOARD)
+        else:
+            if not validate_matrix_size(matrix_size):
+                print(f'You entered {matrix_size} but your input is not between 3 and 9\n')
+            else:
+                break
+    hidden_board = [['']*matrix_size for x in range(matrix_size)]
+    guess_board = [['']*matrix_size for x in range(matrix_size)]
+    create_ship(hidden_board, matrix_size)
+    print(hidden_board)
     turns = 5
     while turns > 0:
-        print_board(GUESS_BOARD)
-        row, column = get_ship_location()
-        if GUESS_BOARD[row][column] == 'x':
+        print_board(guess_board, matrix_size)
+        row, column = get_ship_location(matrix_size)
+        if guess_board[row][column] == 'x':
             print('You already guessed that\n')
-        elif HIDDEN_BOARD[row][column] == 'k':
+        elif hidden_board[row][column] == 'k':
             print('Congratulations, You have hit the target.\n ---You Won---\n')
             print('Play again :)\n')
 
-            GUESS_BOARD[row][column] = 'k'
-            print_board(GUESS_BOARD)
+            guess_board[row][column] = 'k'
+            print_board(guess_board, matrix_size)
 
             break
         else:
             print('Sorry, You missed the target\n')
-            GUESS_BOARD[row][column] = 'x'
+            guess_board[row][column] = 'x'
             turns -= 1
             print('You have ' + str(turns) + ' turns remaining\n')
         if turns == 0:
             print('Sorry, your turns are finished,\n ---The game over---\n')
             print('Play again :)\n')
 
-            GUESS_BOARD[row][column] = 'x'
-            print_board(GUESS_BOARD)
+            guess_board[row][column] = 'x'
+            print_board(guess_board, matrix_size)
 
             break
 
