@@ -1,5 +1,7 @@
 from random import randint
 import os
+from colorama import Fore
+
 
 # Legend
 # k for placing ship and hit battleship
@@ -57,7 +59,7 @@ def get_ship_location(matrix_size):
         try:
             row = int(input(f'Please enter a ship row 1 - {matrix_size} : \n'))
         except ValueError:
-            print('Please enter a valid integer\n')
+            print(Fore.RED + 'Please enter a valid integer\n')
             continue
         else:
             if not validate_input(matrix_size, row):
@@ -69,7 +71,7 @@ def get_ship_location(matrix_size):
         try:
             column = int(input(f'Please enter a ship column 1 - {matrix_size} : \n'))
         except ValueError:
-            print('Please enter a valid integer\n')
+            print(Fore.RED + 'Please enter a valid integer\n')
             continue
         else:
             if not validate_input(matrix_size, column):
@@ -124,19 +126,21 @@ def main():
     and holding the control of all functions
     with different messages and alerts.
     """
+    print('WELCOME TO PYTHON GAME\n')
+    print('TO START PLEASE ENTER YOUR NAME IN THE INPUT BELOW\n')
     while True:
         name = (input('Please enter your name: \n'))
         if validate_name(name):
             break
         else:
-            print('Name should only contain string characters\n')
-    print(f'Hello {name} welcome to battleship\n')
+            print(Fore.RED + 'Name should only contain string characters\n')
+    print(Fore.GREEN + f'Hello {name} welcome to battleship\n')
     while True:
         try:
             matrix_size = int(input
                               ('Please enter matrix size (between 3 and 9): \n'))
         except ValueError:
-            print('Please enter a valid integer\n')
+            print(Fore.RED + 'Please enter a valid integer\n')
             continue
         else:
             if not validate_matrix_size(matrix_size):
@@ -154,8 +158,8 @@ def main():
         if guess_board[row][column] == 'x':
             print('You already guessed that\n')
         elif hidden_board[row][column] == 'k':
-            print('Congratulations, You have hit the target.\n ---You Won---\n')
-            print('Play again :)\n')
+            print(Fore.BLUE + 'Congratulations, You have hit the target.\n ---You Won---\n')
+            print(Fore.BLUE + 'Play again :)\n')
 
             guess_board[row][column] = 'k'
             print_board(guess_board, matrix_size)
@@ -167,8 +171,8 @@ def main():
             turns -= 1
             print('You have ' + str(turns) + ' turns remaining\n')
         if turns == 0:
-            print('Sorry, your turns are finished,\n ---The game over---\n')
-            print('Play again :)\n')
+            print(Fore.BLUE + 'Sorry, your turns are finished,\n ---The game over---\n')
+            print(Fore.BLUE + 'Play again :)\n')
 
             guess_board[row][column] = 'x'
             print_board(guess_board, matrix_size)
