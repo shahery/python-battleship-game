@@ -64,6 +64,13 @@
 
   [Back to top](#)
 # Deployment
+ This project was deployed using the code institute's mock terminal for heroku.
+   * Steps for deployment:
+     * Fork or clone this repository
+     * Create a new heroku app
+     * Set the buildpacks to Python and NodeJS in that order
+     * Link the heroku app to the repository
+     * Click on Deploy 
 
   [Back to top](#)
 # Credits
@@ -76,5 +83,6 @@
 
  ## Acknowledgements
    * My mentor who supported me throughout the project.
+   * Code institute for the deployment terminal.
 
  [Back to top](#)
