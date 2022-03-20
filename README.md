@@ -1,31 +1,80 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleship Game
+  
+  The deployed link can be found here: 
 
-Welcome shahery,
+# About
+  
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+# Users stories:
+    
+    The Game is made simple, easy to access with good text colour and looking good. The Game is made for the following:
+    * Users who love participating in the games.
+    * Users who like entertainment of games.
 
-## Reminders
+# Table of contents
+  * [Features](#features)
+  * [Technology Used](#technology-used)
+  * [Features left to implement](#features-left-to-implement)
+  * [Testing](#testing)
+  * [Bugs](#bugs)
+  * [Colour](#colour)
+  * [Deployment](#deployment)
+  * [Credits](#credits) 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+# Features
+   
+   
+   [Back to top](#)
 
-## Creating the Heroku app
+# Technology Used 
+  * [GitHub](https://github.com)
+  * [Gitpod](https://www.gitpod.io) 
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+   [Back to top](#)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+ ## Features left to implement
+   * 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+# Testing
+  * I tested that this page works in different browsers: Chrome, safari, firefox.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+ ## Validator Testing
+   * Python
+     * No errors were returned when passing through the official 
+    
 
-Connect your GitHub repository and deploy as normal.
+   * Accessibilty
+     
+      
 
-## Constraints
+   [Back to top](#)
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+  ## Bugs
+   ### solved bugs
+     
 
------
-Happy coding!
+ ## Unfixed Bugs
+   * No unfixed bugs.
+   
+   [Back to top](#)
+
+# Colour
+  
+     
+
+  [Back to top](#)
+# Deployment
+
+  [Back to top](#)
+# Credits
+ ## Content
+   * The Idea of README.md file and the codes used for website were also learnt from [Code institute](https://codeinstitute.net)
+   * some codes used in game were taken from [Stackoverflow](https://stackoverflow.com/)
+
+ ## Media
+   * The ascii art logo was taken from [Pexels](https://www.pexels.com)
+
+ ## Acknowledgements
+   * My mentor who supported me throughout the project.
+
+ [Back to top](#)
