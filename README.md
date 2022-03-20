@@ -36,6 +36,7 @@
    [Back to top](#)
 
 # Technology Used 
+  * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
   * [GitHub](https://github.com)
   * [Gitpod](https://www.gitpod.io) 
 
@@ -45,16 +46,15 @@
    * 
 
 # Testing
-  * I tested that this page works in different browsers: Chrome, safari, firefox.
+  I have manually tested this project by doing the following:
+  * Passed the code through a PEP8 linter and confirmed there are no problems
+  * Given invalid inputs: strings when numbers are expected, out of bounds inputs, same input twice
+  * Tested in my local terminal and the Code Institute Heroku terminal
 
  ## Validator Testing
-   * Python
-     * No errors were returned when passing through the official 
-    
-
-   * Accessibilty
-     
-      
+   * PEP8
+     * No errors were returned from [PEP8 checker](http://pep8online.com/)
+     <img width="1107" alt="pep8 checker" src="https://user-images.githubusercontent.com/95220937/159189614-14d2a068-f559-4308-b3b6-14135dd53794.png">    
 
    [Back to top](#)
 
