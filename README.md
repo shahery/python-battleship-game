@@ -19,7 +19,7 @@
 
 # Users stories:
      																						
- As a player I want to set up the hidden board using the matrix size.
+ As a player I want to set up the guess board using the matrix size.
    * Randomly generate a board.	
 
  As a player I want to select the row and column where I'm attacking.
