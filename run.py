@@ -58,15 +58,16 @@ def get_ship_location(matrix_size):
     print(' -----------')
     while True:
         try:
-            row = int(input(f'Please enter a ship row 1 - {matrix_size} : \n'))
+            string = "Please enter a ship row"
+            row = int(input(f'> {string} 1 - {matrix_size} : \n'))
         except ValueError:
-            print(Fore.RED + 'Please enter a valid integer\n')
+            print(Fore.RED + '> Please enter a valid integer\n')
             print(Style.RESET_ALL)
             continue
         else:
             if not validate_input(matrix_size, row):
-                print(Fore.RED + f"Oops, You entered {row} but your input is",
-                      f"not between {1} and {matrix_size}\n")
+                print(Fore.RED + f"> Oops, You entered {row} but your input",
+                      f" is not between {1} and {matrix_size}\n")
                 print(Style.RESET_ALL)
             else:
                 break
@@ -74,14 +75,14 @@ def get_ship_location(matrix_size):
     while True:
         try:
             string = "Please enter a ship column"
-            column = int(input(f"{string} 1 - {matrix_size} : \n"))
+            column = int(input(f"> {string} 1 - {matrix_size} : \n"))
         except ValueError:
-            print(Fore.RED + 'Please enter a valid integer\n')
+            print(Fore.RED + '> Please enter a valid integer\n')
             print(Style.RESET_ALL)
             continue
         else:
             if not validate_input(matrix_size, column):
-                print(Fore.RED + f'Oops, You entered {column} but your',
+                print(Fore.RED + f'> Oops, You entered {column} but your',
                       f'input is not between {1} and {matrix_size}\n')
                 print(Style.RESET_ALL)
             else:
@@ -134,7 +135,7 @@ def main():
     and holding the control of all functions
     with different messages and alerts.
     """
-    print('WELCOME TO PYTHON GAME\n')
+    print('> WELCOME TO PYTHON GAME\n')
     title = """ _           _   _   _           _     _
 | |         | | | | | |         | |   (_)
 | |__   __ _| |_| |_| | ___  ___| |__  _ _ __
@@ -146,29 +147,29 @@ def main():
 
     print(f'{title}')
     while True:
-        is_enter_pressed = (input('PRESS ENTER TO START THE GAME\n'))
+        is_enter_pressed = (input('> PRESS ENTER TO START THE GAME\n'))
         if is_enter_pressed == "":
             while True:
-                name = (input('Please enter your name: \n'))
+                name = (input('> Please enter your name: \n'))
                 if validate_name(name):
                     break
                 else:
-                    print(Fore.RED + 'Name should only contain string',
+                    print(Fore.RED + '> Name should only contain string',
                           'characters\n')
                     print(Style.RESET_ALL)
-            print(Fore.GREEN + f'Hello {name} welcome to battleship\n')
+            print(Fore.GREEN + f'> Hello {name} welcome to battleship\n')
             print(Style.RESET_ALL)
             while True:
                 try:
-                    string = "Please enter matrix size"
+                    string = "> Please enter matrix size"
                     matrix_size = int(input(f'{string} (between 3 and 9): \n'))
                 except ValueError:
-                    print(Fore.RED + 'Please enter a valid integer\n')
+                    print(Fore.RED + '> Please enter a valid integer\n')
                     print(Style.RESET_ALL)
                     continue
                 else:
                     if not validate_matrix_size(matrix_size):
-                        print(Fore.RED + f'Oops, You entered {matrix_size}',
+                        print(Fore.RED + f'> Oops, You entered {matrix_size}',
                               'but your input is not between 3 and 9\n')
                         print(Style.RESET_ALL)
                     else:
@@ -182,13 +183,13 @@ def main():
                 print_board(guess_board, matrix_size)
                 row, column = get_ship_location(matrix_size)
                 if guess_board[row][column] == 'x':
-                    print(Fore.RED + 'You already guessed that\n')
+                    print(Fore.RED + '> You already guessed that\n')
                     print(Style.RESET_ALL)
                 elif hidden_board[row][column] == 'k':
-                    print(Fore.GREEN + 'Congratulations, You have hit',
+                    print(Fore.GREEN + '> Congratulations, You have hit',
                           'the target.\n ---You Won---\n')
                     print(Style.RESET_ALL)
-                    print(Fore.BLUE + 'Play again :)\n')
+                    print(Fore.BLUE + '> Play again :)\n')
                     print(Style.RESET_ALL)
 
                     guess_board[row][column] = 'k'
@@ -196,18 +197,18 @@ def main():
 
                     break
                 else:
-                    print(Fore.RED + 'Sorry, You missed the target\n')
+                    print(Fore.RED + '> Sorry, You missed the target\n')
                     print(Style.RESET_ALL)
                     guess_board[row][column] = 'x'
                     turns -= 1
-                    print(Fore.BLUE + 'You have ' + str(turns) + '',
+                    print(Fore.BLUE + '> You have ' + str(turns) + '',
                           'turns remaining\n')
                     print(Style.RESET_ALL)
                 if turns == 0:
-                    print(Fore.RED + 'Sorry, your turns are finished,\n',
+                    print(Fore.RED + '> Sorry, your turns are finished,\n',
                           '---GAME OVER---\n')
                     print(Style.RESET_ALL)
-                    print(Fore.BLUE + 'Play again :)\n')
+                    print(Fore.BLUE + '> Play again :)\n')
                     print(Style.RESET_ALL)
 
                     guess_board[row][column] = 'x'
@@ -216,7 +217,7 @@ def main():
                     break
             break
         else:
-            print(Fore.RED + 'Enter button will only start the game\n')
+            print(Fore.RED + '> Enter button will only start the game\n')
             print(Style.RESET_ALL)
 
 
