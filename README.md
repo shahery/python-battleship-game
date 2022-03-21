@@ -39,7 +39,9 @@
  * User Matrix_size selection
    * After input the username accurately
    * User can select the size of the matrix
+   * User must input the valid integer
    * Error message will display if the user does not put the name accurately
+   * Error message will display if the user does not input the valid integer
    * Error message will display if the user does not select the matrix size in range given
    <img width="600" alt="shot2" src="https://user-images.githubusercontent.com/95220937/159240431-90b02f2a-eaae-4b1d-8178-3a692e322fa3.png">
 
