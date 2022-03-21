@@ -1,7 +1,7 @@
 # Battleship Game
   Battleship is a python terminal game, which runs in the code institute mock terminal on heroku,
-  This game is made for single player in which user can win the game by guessing the exact
-  location of ship hidden in the board.
+  This game is made for single player against the computer in which user can win the game by guessing
+  the exact location of ship hidden in the board.
 
   The deployed link can be found here: 
 
@@ -18,11 +18,21 @@
   * [Credits](#credits)
 
 # Users stories:
-    
-    The Game is made simple, easy to access with good text colour and looking good.
-    The Game is made for the following:
-    * Users who love participating in the games.
-    * Users who like entertainment of games.
+     																						
+ As a player I want to set up the hidden board using the matrix size.
+   * Randomly generate a board.	
+
+ As a player I want to select the row and column where I'm attacking.
+   * select row, column and place 'X' if I missed the shot. 																
+   * select row, column and place 'k' if I hit the target.
+
+ As	a player I must have few turns to hit the target.
+   * five turns are given to hit the target.
+
+ As a player I want to know who has won.
+   * game over. 																						
+   * message of who win or lose. 																			
+   * message of "play again".
 
   [Back to top](#)
 
@@ -86,7 +96,8 @@
    [Back to top](#)
 
  ## Features left to implement
-   * 
+  * In future, I am thinking about using the classes when creating the games
+  * I will create the two players game or multiple players games in the future
 
 # Testing
   I have manually tested this project by doing the following:
