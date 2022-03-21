@@ -5,22 +5,9 @@
 
   The deployed link can be found here: 
 
-
-# How to play
- This is a single player guessing game in which there will be the guess board with one ship hidden
- in the board and the user will have the five turns to hit the ship by guessing the location given
- in the board, If the user hit the ship 'k' symbol will be shown with the message of winning and 
- if the user missed the targets 'x' symbol will be shown on the board with the message that he has
- missed the target.
-  
-
-# Users stories:
-    
-    The Game is made simple, easy to access with good text colour and looking good. The Game is made for the following:
-    * Users who love participating in the games.
-    * Users who like entertainment of games.
-
 # Table of contents
+  * [Users stories](#users-stories)
+  * [How to play](#how-to-play)
   * [Existing Features](#features)
   * [Technology Used](#technology-used)
   * [Features left to implement](#features-left-to-implement)
@@ -28,7 +15,28 @@
   * [Bugs](#bugs)
   * [Colour](#colour)
   * [Deployment](#deployment)
-  * [Credits](#credits) 
+  * [Credits](#credits)
+
+# Users stories:
+    
+    The Game is made simple, easy to access with good text colour and looking good.
+    The Game is made for the following:
+    * Users who love participating in the games.
+    * Users who like entertainment of games.
+
+  [Back to top](#)
+
+# How to play
+
+ This is a single player guessing game in which there will be the
+ guess board with one ship hidden in the board and the user will
+ have the five turns to hit the ship by guessing the location given
+ in the board, If the user hit the ship 'k' symbol will be shown
+ on the board with the message of winning and if the user missed 
+ the targets 'x' symbol will be shown on the board with the message
+ that he has missed the target.
+
+ [Back to top](#)
 
 # Existing Features
  * Start the game
@@ -95,7 +103,12 @@
 
   ## Bugs
    ### solved bugs
-     
+     when I created the ship for the board, I assigned the value to the
+     row and column to randomly generate the ship in the board like randint(0, matrix_size)
+     but the bug was created and it generated the ship out of range to the matrix_size.
+     I solved this bug by adding the minus one to the matrix_size like randint(0, matrix_size-1)
+     and in this way bug was solved and ship was generated within the range of matrix_size 
+     in the board.
 
  ## Unfixed Bugs
    * No unfixed bugs.
@@ -103,8 +116,8 @@
    [Back to top](#)
 
 # Colour
-  
-     
+  * I imported the colours from library using the command 'from colorama import Fore, Style'
+  * I used three colours red, green and blue for the text in the terminal.
 
   [Back to top](#)
 # Deployment
