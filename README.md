@@ -21,7 +21,7 @@
     * Users who like entertainment of games.
 
 # Table of contents
-  * [Features](#features)
+  * [Existing Features](#features)
   * [Technology Used](#technology-used)
   * [Features left to implement](#features-left-to-implement)
   * [Testing](#testing)
@@ -30,9 +30,42 @@
   * [Deployment](#deployment)
   * [Credits](#credits) 
 
-# Features
-   
-   
+# Existing Features
+ * Start the game
+   * Only press Enter button will start the game.
+   * Error message will display if you don't press enter button first.
+   <img width="515" alt="shot1" src="https://user-images.githubusercontent.com/95220937/159238446-7aa3f3e3-5309-4c32-9f18-e221e426af32.png">
+
+ * User Matrix_size selection
+   * After input the username accurately
+   * User can select the size of the matrix
+   * Error message will display if the user does not put the name accurately
+   * Error message will display if the user does not select the matrix size in range given
+   <img width="600" alt="shot2" src="https://user-images.githubusercontent.com/95220937/159240431-90b02f2a-eaae-4b1d-8178-3a692e322fa3.png">
+
+ * Ship row and column selection
+   * User must enter the valid row and column (integer) for the board
+   * User must enter the input within the range given
+   * User must not repeat the values for row and column
+   * Error message will display if the user does not enter valid row and column
+   * Error message will display if the user does not input within the range given
+   * Error message will display if the user repeats the values for row and column
+   <img width="605" alt="shot3" src="https://user-images.githubusercontent.com/95220937/159241913-1f8ccd23-6f6e-4ec4-8c20-4fe68fc21a58.png">
+
+ * Losing the game
+   * If the user misses all his 5 guess shots
+   * Then user will lose the game
+   * A message will display of losing the game
+
+   <img width="585" alt="shot4" src="https://user-images.githubusercontent.com/95220937/159245453-7d3cd959-b802-498b-82c1-fa8706f15f9c.png">
+
+ * Winning the game
+   * If the user selects the right row and column where the ship was hidden
+   * Then user will win the game
+   * A message will display of winning the game
+
+   <img width="568" alt="shot5" src="https://user-images.githubusercontent.com/95220937/159245554-77b561bf-7636-4904-b59f-c96ccb334eb5.png">
+
    [Back to top](#)
 
 # Technology Used 
