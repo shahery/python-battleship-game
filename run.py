@@ -44,10 +44,9 @@ def create_ship(board, matrix_size):
 
 def get_ship_location(matrix_size):
     """
-    Returns the ship location in the board,
     Raise the value error for ship row and
-    ship column with message.
-    Returns: the location of the ship as a tuple.
+    ship column with message,
+    Returns: the location of the ship in the board.
     Parameters:
           matrix_size: selection of board
           size for the user.
@@ -161,6 +160,15 @@ def main():
                           'characters\n')
                     print(Style.RESET_ALL)
             print(Fore.GREEN + f'> Hello {name} welcome to battleship\n')
+            print(Style.RESET_ALL)
+            print(Fore.BLUE + '--Rules to play the game--')
+            print('First of all choose the matrix size between 3 and 9',
+                  'to create the board for the game below')
+            print('Then you will have the five turns to hit the target')
+            print('You have to choose the row and column within the matrix',
+                  'size you selected')
+            print("If you miss the target 'x' sign will display on the board")
+            print("If you hit the target 'k' sign will display on the board")
             print(Style.RESET_ALL)
             while True:
                 try:
