@@ -5,8 +5,8 @@ from colorama import Fore, Style
 
 # Legend
 # k for placing ship and hit battleship
-# '' for available space
-# x for missing turns
+# | | for available space
+# x for missing shots
 
 os.system('clear')
 
