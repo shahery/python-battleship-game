@@ -91,7 +91,8 @@
 # Technology Used 
   * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
   * [GitHub](https://github.com)
-  * [Gitpod](https://www.gitpod.io) 
+  * [Gitpod](https://www.gitpod.io)
+  * [Heroku](https://en.wikipedia.org/wiki/Heroku) 
 
    [Back to top](#)
 
