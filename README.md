@@ -8,7 +8,7 @@
 # Table of contents
   * [Users stories](#users-stories)
   * [How to play](#how-to-play)
-  * [Existing Features](#features)
+  * [Existing Features](#existing-features)
   * [Technology Used](#technology-used)
   * [Features left to implement](#features-left-to-implement)
   * [Testing](#testing)
