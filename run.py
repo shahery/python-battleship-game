@@ -2,12 +2,6 @@ from random import randint
 import os
 from colorama import Fore, Style
 
-
-# Legend
-# k for placing ship and hit battleship
-# | | for available space
-# x for missing shots
-
 os.system('clear')
 
 
@@ -15,9 +9,10 @@ def print_board(board, matrix_size):
     """
     Print the board for the game
     based on the matrix_size,
-    board: the board to play,
-    matrix_size: selection of board
-    size for the user.
+    Parameters:
+          Board: the board to play.
+          Matrix_size: selection of board
+          size for the user.
     """
     i = 2
     print(' -----------')
@@ -36,9 +31,10 @@ def create_ship(board, matrix_size):
     """
     Print the ship for the board
     using the random integer,
-    board: the board to play,
-    matrix_size: selection of board
-    size for the user.
+    Parameters:
+          Board: the board to play.
+          Matrix_size: selection of board
+          size for the user.
     """
     random_row = randint(0, matrix_size-1)
     random_column = randint(0, matrix_size - 1)
@@ -50,10 +46,11 @@ def get_ship_location(matrix_size):
     """
     Returns the ship location in the board,
     Raise the value error for ship row and
-    ship column with message,
-    Returns: the location of the ship as a tuple,
-    matrix_size: selection of board
-    size for the user.
+    ship column with message.
+    Returns: the location of the ship as a tuple.
+    Parameters:
+          matrix_size: selection of board
+          size for the user.
     """
     print(' -----------')
     while True:
@@ -92,9 +89,10 @@ def get_ship_location(matrix_size):
 
 def count_hit_ship(board):
     """
-    Returns the count for hitting ship
-    in the board and indicate with k,
-    board: the board to play.
+    Returns: the count for hitting ship
+    in the board and indicate with k.
+    Parameters:
+          Board: the board to play.
     """
     count = 0
     for row in board:
@@ -106,25 +104,30 @@ def count_hit_ship(board):
 
 def validate_name(name):
     """
-    Returns the validate user name,
-    name: the username.
+    Returns:
+         the validate user name.
+    Parameters:
+         name: the username.
     """
     return name.isalpha()
 
 
 def validate_matrix_size(matrix_size):
     """
-    matrix_size: selection of board
-    size for the user.
+    Parameters:
+          matrix_size: selection of board
+          size for the user.
     """
     return matrix_size > 2 and matrix_size < 10
 
 
 def validate_input(matrix_size, coordinates):
     """
-    matrix_size: selection of board
-    size for the user,
-    coordinates: for rows and columns of board.
+    Parameters:
+          matrix_size: selection of board
+          size for the user.
+          coordinates: for rows and columns of board.
+    Returns: the valid input
     """
     return coordinates > 0 and coordinates <= matrix_size
 
