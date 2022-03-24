@@ -88,8 +88,8 @@ def get_ship_location(matrix_size):
 
 def count_hit_ship(board):
     """
-    Returns: the count for hitting ship
-    in the board and indicate with k.
+    Returns: if the ship has been hit it returns 1
+    otherwise it will return 0
     Parameters:
           Board: the board to play.
     """
@@ -104,7 +104,8 @@ def count_hit_ship(board):
 def validate_name(name):
     """
     Returns:
-         the validate user name.
+        a boolean value, that would be true
+        if the name is a string of characters.
     Parameters:
          name: the username.
     """
@@ -131,7 +132,7 @@ def validate_input(matrix_size, coordinates):
     return coordinates > 0 and coordinates <= matrix_size
 
 
-def main():
+def play():
     """
     Add the check for username, matrix_size
     and holding the control of all functions
@@ -230,6 +231,22 @@ def main():
         else:
             print(Fore.RED + '> Enter button will only start the game\n')
             print(Style.RESET_ALL)
+
+
+def main():
+    """
+    Managing the status of the game.
+    Game will be started by this function.
+    """
+    while True:
+        play()
+        restart = input("Do you want to restart Y/N?: ")
+        if restart.lower() == 'y':
+            continue
+        else:
+            print("Thanks for playing!")
+            break
+        print(restart)
 
 
 main()
