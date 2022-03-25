@@ -33,7 +33,7 @@ def print_board(board, matrix_size):
 def create_ship(board, matrix_size):
     """
     Print the ship for the board
-    using the random integer,
+    using the random integer.
     Parameters:
           Board: The board to play.
           Matrix_size: Selection of board
@@ -51,7 +51,7 @@ def create_ship(board, matrix_size):
 def get_ship_location(matrix_size):
     """
     Raise the value error for ship row and
-    ship column with message,
+    ship column with message.
     Returns: The location of the ship in the board.
     Parameters:
           matrix_size: Selection of board
@@ -96,7 +96,7 @@ def get_ship_location(matrix_size):
 
 def count_hit_ship(board):
     """
-    Returns: If the ship has been hit it returns 1
+    Returns: If the ship has been hit, it returns 1
     otherwise it will return 0.
     Parameters:
           Board: the board to play.
@@ -114,7 +114,7 @@ def validate_name(name):
     Returns: A boolean value, that would be true
     if the name is a string of characters.
     Parameters:
-         name: the username.
+         name: The username.
     Credit: The code for name validation
     was taken from stackoverflow.
     """
@@ -136,7 +136,7 @@ def validate_input(matrix_size, coordinates):
           matrix_size: selection of board
           size for the user.
           coordinates: for rows and columns of board.
-    Returns: the valid input
+    Returns: The valid input.
     """
     return coordinates > 0 and coordinates <= matrix_size
 
@@ -202,7 +202,6 @@ def play():
             hidden_board = [['']*matrix_size for x in range(matrix_size)]
             guess_board = [['']*matrix_size for x in range(matrix_size)]
             create_ship(hidden_board, matrix_size)
-            print(hidden_board)
             turns = 5
             while turns > 0:
                 print_board(guess_board, matrix_size)

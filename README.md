@@ -152,8 +152,8 @@
 # Credits
  ## Content
    * The Idea of README.md file and the codes used for game were also learnt from [Code Institute](https://codeinstitute.net)
-   * some codes used for game were taken from [Stackoverflow](https://stackoverflow.com/)
-   * some codes used for game were taken from this tutorial video [Python battleship](https://www.youtube.com/watch?v=tF1WRCrd_HQ&ab_channel=KnowledgeMavens)
+   * Some codes used for game were taken from [Stackoverflow](https://stackoverflow.com/)
+   * Some codes used for game were taken from this tutorial video [Python battleship](https://www.youtube.com/watch?v=tF1WRCrd_HQ&ab_channel=KnowledgeMavens)
    * Codes for colour were taken from [pypi](https://pypi.org/project/colorama/)
 
  ## Media
