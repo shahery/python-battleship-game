@@ -86,6 +86,13 @@
 
    <img width="568" alt="shot5" src="https://user-images.githubusercontent.com/95220937/159245554-77b561bf-7636-4904-b59f-c96ccb334eb5.png">
 
+ * Restart the game
+   * when the game finished there will be the question that 'Do you want to play again?'
+   * If the user wants to play again then simply press 'Y' or 'y'
+   * If the user wants to quit then press 'n' or 'N'
+
+   <img width="604" alt="shot6" src="https://user-images.githubusercontent.com/95220937/160112868-9f9bfa75-5d9f-4b64-9c25-d7638c058050.png">
+
    [Back to top](#)
 
 # Technology Used 
