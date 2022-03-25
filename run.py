@@ -1,6 +1,5 @@
 from random import randint
 import os
-from colorama import Fore, Style
 
 os.system('clear')
 
@@ -65,14 +64,14 @@ def get_ship_location(matrix_size):
             string = "Please enter a ship row"
             row = int(input(f'> {string} 1 - {matrix_size} : \n'))
         except ValueError:
-            print(Fore.RED + '> Please enter a valid integer\n')
-            print(Style.RESET_ALL)
+            print( '> Please enter a valid integer\n')
+    
             continue
         else:
             if not validate_input(matrix_size, row):
-                print(Fore.RED + f"> Oops, You entered {row} but your input",
+                print(f"> Oops, You entered {row} but your input",
                       f" is not between {1} and {matrix_size}\n")
-                print(Style.RESET_ALL)
+        
             else:
                 break
 
@@ -81,14 +80,14 @@ def get_ship_location(matrix_size):
             string = "Please enter a ship column"
             column = int(input(f"> {string} 1 - {matrix_size} : \n"))
         except ValueError:
-            print(Fore.RED + '> Please enter a valid integer\n')
-            print(Style.RESET_ALL)
+            print(""'> Please enter a valid integer\n')
+    
             continue
         else:
             if not validate_input(matrix_size, column):
-                print(Fore.RED + f'> Oops, You entered {column} but your',
+                print( f'> Oops, You entered {column} but your',
                       f'input is not between {1} and {matrix_size}\n')
-                print(Style.RESET_ALL)
+        
             else:
                 break
     return(int(row)-1, int(column)-1)
@@ -170,12 +169,12 @@ def play():
                 if validate_name(name):
                     break
                 else:
-                    print(Fore.RED + '> Name should only contain string',
+                    print( '> Name should only contain string',
                           'characters\n')
-                    print(Style.RESET_ALL)
-            print(Fore.GREEN + f'> Hello {name} welcome to battleship\n')
-            print(Style.RESET_ALL)
-            print(Fore.BLUE + '--Rules to play the game--')
+            
+            print( f'> Hello {name} welcome to battleship\n')
+    
+            print( '--Rules to play the game--')
             print('First of all choose the matrix size between 3 and 9',
                   'to create the board for the game below')
             print('Then you will have the five turns to hit the target')
@@ -183,20 +182,20 @@ def play():
                   'size you selected')
             print("If you miss the target 'x' sign will display on the board")
             print("If you hit the target 'k' sign will display on the board")
-            print(Style.RESET_ALL)
+    
             while True:
                 try:
                     string = "> Please enter matrix size"
                     matrix_size = int(input(f'{string} (between 3 and 9): \n'))
                 except ValueError:
-                    print(Fore.RED + '> Please enter a valid integer\n')
-                    print(Style.RESET_ALL)
+                    print( '> Please enter a valid integer\n')
+            
                     continue
                 else:
                     if not validate_matrix_size(matrix_size):
-                        print(Fore.RED + f'> Oops, You entered {matrix_size}',
+                        print( f'> Oops, You entered {matrix_size}',
                               'but your input is not between 3 and 9\n')
-                        print(Style.RESET_ALL)
+                
                     else:
                         break
             hidden_board = [['']*matrix_size for x in range(matrix_size)]
@@ -207,33 +206,33 @@ def play():
                 print_board(guess_board, matrix_size)
                 row, column = get_ship_location(matrix_size)
                 if guess_board[row][column] == 'x':
-                    print(Fore.RED + '> You already guessed that\n')
-                    print(Style.RESET_ALL)
+                    print( '> You already guessed that\n')
+            
                 elif hidden_board[row][column] == 'k':
-                    print(Fore.GREEN + '> Congratulations, You have hit',
+                    print( '> Congratulations, You have hit',
                           'the target.\n ---You Won---\n')
-                    print(Style.RESET_ALL)
-                    print(Fore.BLUE + '> Play again :)\n')
-                    print(Style.RESET_ALL)
+            
+                    print( '> Play again :)\n')
+            
 
                     guess_board[row][column] = 'k'
                     print_board(guess_board, matrix_size)
 
                     break
                 else:
-                    print(Fore.RED + '> Sorry, You missed the target\n')
-                    print(Style.RESET_ALL)
+                    print( '> Sorry, You missed the target\n')
+            
                     guess_board[row][column] = 'x'
                     turns -= 1
-                    print(Fore.BLUE + '> You have ' + str(turns) + '',
+                    print( '> You have ' + str(turns) + '',
                           'turns remaining\n')
-                    print(Style.RESET_ALL)
+            
                 if turns == 0:
-                    print(Fore.RED + '> Sorry, your turns are finished,\n',
+                    print( '> Sorry, your turns are finished,\n',
                           '---GAME OVER---\n')
-                    print(Style.RESET_ALL)
-                    print(Fore.BLUE + '> Play again :)\n')
-                    print(Style.RESET_ALL)
+            
+                    print( '> Play again :)\n')
+            
 
                     guess_board[row][column] = 'x'
                     print_board(guess_board, matrix_size)
@@ -241,8 +240,8 @@ def play():
                     break
             break
         else:
-            print(Fore.RED + '> Enter button will only start the game\n')
-            print(Style.RESET_ALL)
+            print( '> Enter button will only start the game\n')
+    
 
 
 def main():
