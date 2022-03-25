@@ -3,7 +3,9 @@
   This game is made for single player against the computer in which user can win the game by guessing
   the exact location of ship hidden in the board.
 
-  The deployed link can be found here: 
+  <img width="1033" alt="project3" src="https://user-images.githubusercontent.com/95220937/160170109-c721cb8f-af94-4614-bb68-e10f161d2509.png">
+
+  The deployed link can be found here: [Live](https://python-battleship-game.herokuapp.com/)
 
 # Table of contents
   * [Users stories](#users-stories)
