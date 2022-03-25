@@ -8,11 +8,14 @@ os.system('clear')
 def print_board(board, matrix_size):
     """
     Print the board for the game
-    based on the matrix_size,
+    based on the matrix_size.
     Parameters:
-          Board: the board to play.
-          Matrix_size: selection of board
+          Board: The board to play.
+          Matrix_size: Selection of board
           size for the user.
+    Credit: Codes were taken from stackoverflow
+    and python battleship tutorial video to
+    print the board.
     """
     i = 2
     print(' -----------')
@@ -32,9 +35,12 @@ def create_ship(board, matrix_size):
     Print the ship for the board
     using the random integer,
     Parameters:
-          Board: the board to play.
-          Matrix_size: selection of board
+          Board: The board to play.
+          Matrix_size: Selection of board
           size for the user.
+    Credit: The idea to create the ship
+    was taken from python battleship
+    tutorial video.
     """
     random_row = randint(0, matrix_size-1)
     random_column = randint(0, matrix_size - 1)
@@ -46,10 +52,12 @@ def get_ship_location(matrix_size):
     """
     Raise the value error for ship row and
     ship column with message,
-    Returns: the location of the ship in the board.
+    Returns: The location of the ship in the board.
     Parameters:
-          matrix_size: selection of board
+          matrix_size: Selection of board
           size for the user.
+    Credit: The codes for colour the text were
+    taken from pypi.
     """
     print(' -----------')
     while True:
@@ -88,8 +96,8 @@ def get_ship_location(matrix_size):
 
 def count_hit_ship(board):
     """
-    Returns: if the ship has been hit it returns 1
-    otherwise it will return 0
+    Returns: If the ship has been hit it returns 1
+    otherwise it will return 0.
     Parameters:
           Board: the board to play.
     """
@@ -103,11 +111,12 @@ def count_hit_ship(board):
 
 def validate_name(name):
     """
-    Returns:
-        a boolean value, that would be true
-        if the name is a string of characters.
+    Returns: A boolean value, that would be true
+    if the name is a string of characters.
     Parameters:
          name: the username.
+    Credit: The code for name validation
+    was taken from stackoverflow.
     """
     return name.isalpha()
 
@@ -137,6 +146,10 @@ def play():
     Add the check for username, matrix_size
     and holding the control of all functions
     with different messages and alerts.
+    Credit: Ascii art logo was taken from
+    Battleship-Ascii Art website and codes
+    for colour the text were taken from
+    pypi.
     """
     print('> WELCOME TO PYTHON GAME\n')
     title = """ _           _   _   _           _     _
@@ -237,10 +250,12 @@ def main():
     """
     Managing the status of the game.
     Game will be started by this function.
+    Credit: The codes were taken from
+    stackoverflow to restart the game.
     """
     while True:
         play()
-        restart = input("Do you want to restart Y/N?: ")
+        restart = input("Do you want to play agin? Y/N?: ")
         if restart.lower() == 'y':
             continue
         else:
